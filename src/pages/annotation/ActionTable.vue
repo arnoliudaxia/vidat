@@ -301,6 +301,7 @@ const handleAdd = () => {
       ''
   ))
 }
+// TODO 主页下部add & advance按键
 const handleAddAdvance = () => {
   handleAdd()
   const nextFrame = annotationStore.rightCurrentFrame + 1 > annotationStore.video.frames
@@ -316,7 +317,9 @@ const handleAddAdvance = () => {
       nearestKeyframe = annotationStore.keyframeList[i]
     }
   }
-  annotationStore.rightCurrentFrame = nearestKeyframe
+  // TODO backup
+  // annotationStore.rightCurrentFrame = nearestKeyframe
+  annotationStore.rightCurrentFrame = nextFrame
   // left frame -> left frame => action end frame + 1
   annotationStore.leftCurrentFrame = nextFrame
 }

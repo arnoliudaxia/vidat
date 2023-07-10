@@ -127,19 +127,22 @@ let videoPlayTimeout
 let videoPlayInterval
 let lastLeftCurrentFrame
 
+// TODO 主页左上角播放回调
 const play = () => {
+  console.log("调用play");
   const videoPlayer = document.getElementById('video-player')
   isPaused.value = false
   isStopped.value = false
   videoPlayer.playbackRate = annotationStore.videoPlaybackRate
-  videoPlayer.play()
+  // videoPlayer.play()
   const duration = (utils.index2time(annotationStore.rightCurrentFrame) - videoPlayer.currentTime) * 1000 /
     videoPlayer.playbackRate
-  videoPlayTimeout = setTimeout(() => {
-    handleStop()
-  }, duration)
+  // videoPlayTimeout = setTimeout(() => {
+  //   handleStop()
+  // }, duration)
   videoPlayInterval = setInterval(() => {
-    moveLeftFrame(1)
+    // moveLeftFrame(1)
+    moveRightFrame(1)
   }, 1000 / annotationStore.video.fps / videoPlayer.playbackRate)
 }
 const pause = () => {
