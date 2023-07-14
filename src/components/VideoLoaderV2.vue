@@ -12,6 +12,7 @@ const annotationStore = useAnnotationStore()
 const preferenceStore = usePreferenceStore()
 let worker
 onMounted(() => {
+  console.log("v2");
   watch(() => annotationStore.video.src, (newValue) => {
     if (worker) {
       worker.terminate()

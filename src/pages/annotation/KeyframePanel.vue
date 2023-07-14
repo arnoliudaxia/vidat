@@ -129,12 +129,17 @@ let lastLeftCurrentFrame
 
 // TODO 主页左上角播放回调
 const play = () => {
-  console.log("调用play");
+  console.log(annotationStore.leftCurrentFrame);
+  console.log(annotationStore.rightCurrentFrame);
+  if(annotationStore.leftCurrentFrame === 0){
+    annotationStore.rightCurrentFrame = 0;
+  }
+  console.log("调用play2");
   const videoPlayer = document.getElementById('video-player')
   isPaused.value = false
   isStopped.value = false
   videoPlayer.playbackRate = annotationStore.videoPlaybackRate
-  // videoPlayer.play()
+  videoPlayer.play()
   const duration = (utils.index2time(annotationStore.rightCurrentFrame) - videoPlayer.currentTime) * 1000 /
     videoPlayer.playbackRate
   // videoPlayTimeout = setTimeout(() => {

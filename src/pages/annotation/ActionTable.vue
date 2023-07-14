@@ -303,6 +303,9 @@ const handleAdd = () => {
 }
 // TODO 主页下部add & advance按键
 const handleAddAdvance = () => {
+  console.log("记录当前左右的关键帧");
+  console.log(annotationStore.leftCurrentFrame);
+  console.log(annotationStore.rightCurrentFrame);
   handleAdd()
   const nextFrame = annotationStore.rightCurrentFrame + 1 > annotationStore.video.frames
       ? annotationStore.rightCurrentFrame
