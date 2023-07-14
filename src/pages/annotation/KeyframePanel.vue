@@ -174,7 +174,7 @@ const handlePlayPause = () => {
     showVideoPlayer.value = true
     lastLeftCurrentFrame = annotationStore.leftCurrentFrame
     videoPlayer.style.display = 'block'
-    videoPlayer.currentTime = utils.index2time(annotationStore.leftCurrentFrame)
+    videoPlayer.currentTime = utils.index2time(annotationStore.rightCurrentFrame)
     play()
   } else {
     if (isPaused.value) {
